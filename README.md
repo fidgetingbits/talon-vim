@@ -1,8 +1,13 @@
-# talon-vim
+# Talon-Vim
 
-- [talon-vim](#talon-vim)
+[talon-vim](https://github.com/fidgetingbits/talon-vim) is a set of talon scripts that allows for convenient interaction
+with vim (more focused on neovim). In the [age of
+cursorless](https://github.com/cursorless-dev/cursorless), the main benefit from using talon-vim is not for text
+editing, but rather for powerful terminal interaction.
+
+- [Talon-Vim](#talon-vim)
   - [UNDER CONSTRUCTION](#under-construction)
-  - [Introduction](#introduction)
+  - [Project Layout](#project-layout)
   - [Using VIM under Talon](#using-vim-under-talon)
   - [Initial Setup Walkthrough](#initial-setup-walkthrough)
     - [Talon Change - The word `yank`](#talon-change---the-word-yank)
@@ -18,38 +23,21 @@
     - [Using VIM as your terminal](#using-vim-as-your-terminal)
       - [Neovim Terminal Quirks](#neovim-terminal-quirks)
       - [Working directory](#working-directory)
-      - [Installing neovim python package inside talon](#installing-neovim-python-package-inside-talon)
   - [Supported command overview](#supported-command-overview)
     - [Commands](#commands)
     - [Motions](#motions)
     - [Text object selection](#text-object-selection)
-  - [VIM Plugins](#vim-plugins)
-    - [fugitive.vim](#fugitivevim)
-    - [vim-plug.vim](#vim-plugvim)
-    - [fzf.vim](#fzfvim)
-    - [nerdtree.vim](#nerdtreevim)
-    - [cscope.vim](#cscopevim)
-    - [ale.vim](#alevim)
-    - [surround.vim](#surroundvim)
-  - [VIM Examples and Tutorial](#vim-examples-and-tutorial)
-    - [Simple motions and edits](#simple-motions-and-edits)
-      - [Intermediate Usage](#intermediate-usage)
-      - [Advanced Usage](#advanced-usage)
-  - [Frequently Asked Questions](#frequently-asked-questions)
-    - [Why not just use raw vim keyboard commands](#why-not-just-use-raw-vim-keyboard-commands)
-    - [What are some advantages of using talon vim vs raw vim?](#what-are-some-advantages-of-using-talon-vim-vs-raw-vim)
-    - [What are some disadvantages of using talon vim v man mode?](#what-are-some-disadvantages-of-using-talon-vim-v-man-mode)
 
 ## UNDER CONSTRUCTION
 
 talon-vim is currently in the process of being updated after moving out of the [fidgetingbits talon
-repo](https://github.com/fidgetingbits/fidgetingbits-talon). Expect lots of changes.
+repo](https://github.com/fidgetingbits/fidgetingbits-talon). Expect lots of documentation voidchanges.
 
-## Introduction
+## Project Layout
 
-[talon-vim](https://github.com/fidgetingbits/talon-vim) is a set of talon scripts that allows for convenient interaction with vim/neovim. In the [age of
-cursorless](https://github.com/cursorless-dev/cursorless), the main benefit from using talon-vim is not for text
-editing, but rather for powerful terminal interaction.
+- `vim`: Core talon-vim functionality and vim-plugins
+- `apps`: Terminal utilities that can leverage talon-vim API to add functionality
+- `docs`: More per specific documentation for different features
 
 ## Using VIM under Talon
 
@@ -249,10 +237,6 @@ neovim_autocd() {
 chpwd_functions+=( neovim_autocd )
 ```
 
-#### Installing neovim python package inside talon
-
-XXX - this isn't done/documented yet
-
 ## Supported command overview
 
 In this section summarizes most of the main grammars that are supported
@@ -393,214 +377,3 @@ With character arguments:
     "paragraphs": "p",
     "tag block": "t",
 ```
-
-## VIM Plugins
-
-Right now plugins are sorted into their own section under
-`apps/linux/vim_plugins/`. The below is a quick summary of the more heavily
-tested plugins. In general if you don't need these just disable them, by
-adding a `.disable` suffix.
-
-### fugitive.vim
-
-`vim_plugins/fugitive.talon`
-
-### vim-plug.vim
-
-`vim_plugins/plug.talon`
-
-### fzf.vim
-
-`vim_plugins/fzf.talon`
-
-### nerdtree.vim
-
-`vim_plugins/nerdtree.talon`
-
-### cscope.vim
-
-`vim_plugins/cscope.talon`
-
-### ale.vim
-
-`vim_plugins/ale.talon`
-
-### surround.vim
-
-`vim_plugins/surround.talon`
-
-## VIM Examples and Tutorial
-
-This section provides an interactive section where you can test certain
-commands and get a feel for how to interact with the VIM plugins.
-
-It also recommended that you check out the youtube videos related to vimspeak
-since it is the original project that talon vim was originally ported from. You
-could try to follow along with his demos as most of the command should be
-supported.
-
-- [vimspeak code demo](https://www.youtube.com/watch?v=TEBMlXRjhZY)
-- [vimspeak vim golf demo](https://www.youtube.com/watch?v=qy84TYvXJbk)
-
-### Simple motions and edits
-
-Here you can try out some basic commands to get a feel for the flow of using
-the VIM voice commands. Most of the commands should be fairly intuitive.
-
-```
-The quick brown fox jumps over the lazy dog.
-```
-
-With the cursor starting on the letter `T` above, try practicing with the
-following commands. Note that the instructions assume you are viewing this file
-from inside vim and it is the only open buffer and split.
-
-Next let's create a little sandbox to work inside.
-
-- `normal mode`
-- `new empty vertical split`
-- `split rotate`
-- `split left`
-
-Next we will set this `vim.md` file to read-only, to help prevent you
-accidentally deleting things while experimenting.
-
-- `unset modifiable`
-
-You should now have a new empty vertical split containing on the right side of
-your vim screen, and your cursor should be back in the split with the tutorial.
-
-Speak the following commands
-
-- `search reversed lazy dog` (extra space is on purpose to simplify search)
-- `enter`
-- `yank line`
-- `split right`
-- `paste above`
-- `unset highlights`
-- `set line numbers`
-
-Now you should have a new line in the buffer on the right on line number 1.
-
-- `end of line`
-- `start of line`
-- `word`
-- `two word`
-- `find run`
-- `append`
-- `say and under`
-- `normal mode`
-- `find reversed air`
-- `inject space`
-- `back`
-- `two delete word`
-- `find reversed quench`
-- `change word`
-- `say slow`
-- `normal mode`
-- `back`
-- `swap words`
-- `two back`
-- `replace gust`
-- `yank line`
-- `paste below`
-- `repeat that twentyieth`
-- `top of file`
-- `go line ten`
-- `gap below`
-- `two down`
-- `select line`
-- `go down`
-- `delete`
-- `select paragraph`
-- `swap selected`
-- `say lazy`
-- `go right`
-- `say hyper`
-- `enter` (this might be mapped differently for you. how ever you say press enter)
-- `reselect`
-- `swap selected`
-- `space`
-- `go right`
-- `dash`
-- `swap global`
-- `backslash dot`
-- `go right`
-- `bang`
-- `enter` (this might be mapped differently for you. however you press enter)
-
-All done for now. You can close the sandbox buffer:
-
-- `force close this buffer`
-
-This really only touches the surface of the commands supported. You will need
-to spend time reading `vim.talon`, `vim.py`, and experimenting to get a feel
-for everything.
-
-#### Intermediate Usage
-
-Now we will experiment with some more complicated edits
-XXX - to do
-
-#### Advanced Usage
-
-XXX - to do
-
-## Frequently Asked Questions
-
-### Why not just use raw vim keyboard commands
-
-Some people would suggest that a better approach is to use explicit keyboard
-shortcuts and talon alphabet to use VIM, and not break out all of the commands
-into distinct grammars. If you feel this is better, simply don't use any of the
-provided commands. I chose to do it this way as it feels more natural when
-using voice.
-
-### What are some advantages of using talon vim vs raw vim?
-
-You can mix raw vim commands with talon vim interchangeably, you don't have to
-entirely which over if you find parts too cumbersome. For example you might
-like saying `sit` to go from NORMAL mode to INSERT mode, rather than saying
-`insert mode`, and you can continue to do that, which makes sense because it's
-faster.
-
-Some of the real convenience comes from just reducing the amount you have to
-say over a longer period of time. Even if you're only saying one less word every
-command, over the course of an hour or more this adds up a lot.
-
-Some basic convenience comes from more complex sequences of commands combined
-with mode switching that happens automatically. For example if you were editing
-a line `this is an example sentence` and your cursor is on the word `is` while
-in `INSERT` mode. Imagine you want to change the word `sentence` to `line`.
-Without using talon vim you would say: `escape fine sun cap word say line`,
-with talon vim you would say: `find sun change word say line`
-
-If you use things like VISUAL mode, swapping, buffers, splits, tabs,
-terminal, plugins, or any other more advanced vim features they require
-lots of key sequences, you will save yourself a significant amount of time and
-speaking as more and more words can be eliminated.
-
-Example: If you are in INSERT mode and want to switch to a different buffer you would
-need to say: `escape colon bat number enter`. In talon vim you would say
-`buffer number`.
-
-Example: If you are in INSERT mode and you decide you want to select five lines
-down and then swap cat with dog on the selected lines you would say the
-following: `escape vest five jury colon sun slash say cat slash say dog slash gust enter`. With talon vim you would say: `select five lines swap selected say cat go right say dog enter`
-
-It also supports intelligent mode switching, as well as the ability to stay in
-INSERT mode despite calling NORMAL mode commands. So you don't need to say
-`control urge` or swap in and out. For instance `this is an example sentence`,
-if you are in INSERT mode with your cursor on `example` and want to move two
-words back you would say `escape two bat sit` or `control urge two bat`,
-whereas in talon vim you can just say `two back`
-
-### What are some disadvantages of using talon vim v man mode?
-
-There are noticeable slow downs in the speed of commands due to not supporting
-RPC yet. In order to ensure mode switch occurs artificial delays have to be
-introduced so that we can assume the mode has actually changed. In theory this
-should get almost immediate once RPC is supported.
-
-There's a lot of commands to learn, and some of them may not be intuitive right
-away.
