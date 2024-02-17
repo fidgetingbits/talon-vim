@@ -13,24 +13,34 @@ and win.title: /fugitive:\/\//
 
 # Staging/unstaging maps
 
-[file] stage: user.vim_normal_mode_key("s")
-[file] unstage: user.vim_normal_mode_key("u")
-unstage (all | everything): user.vim_normal_mode_key("U")
-[file] discard change: user.vim_normal_mode_key("X")
-file diff: user.vim_normal_mode_key("=")
+[file] stage:
+    user.vim_normal_mode_key("s")
+[file] unstage:
+    user.vim_normal_mode_key("u")
+unstage (all | everything):
+    user.vim_normal_mode_key("U")
+[file] discard change:
+    user.vim_normal_mode_key("X")
+file diff:
+    user.vim_normal_mode_key("=")
 file diff top:
     user.vim_normal_mode("zt")
     user.vim_normal_mode_key("=")
-file exclude: user.vim_normal_mode_keys("g I")
+file exclude:
+    user.vim_normal_mode_keys("g I")
 
 # Diff maps
 
 # Navigation maps
 # XXX - these should may be override common file actions
-file open: user.vim_normal_mode_key("o")
-file open vertical: user.vim_normal_mode_keys("g O")
-file open tabbed: user.vim_normal_mode_key("O")
-file preview: user.vim_normal_mode_key("p")
+file open:
+    user.vim_normal_mode_key("o")
+file open vertical:
+    user.vim_normal_mode_keys("g O")
+file open tabbed:
+    user.vim_normal_mode_key("O")
+file preview:
+    user.vim_normal_mode_key("p")
 
 # Commit maps
 
@@ -60,10 +70,13 @@ git commit verbose [changes]:
     user.vim_set_insert_mode()
     sleep(0.1)
     insert("{user.git_conventional_commits}({word}): ")
-amend [last commit]: user.vim_normal_mode_keys("c v a")
-commit reword: user.vim_normal_mode("cw")
+amend [last commit]:
+    user.vim_normal_mode_keys("c v a")
+commit reword:
+    user.vim_normal_mode("cw")
 
-file restore: user.vim_normal_mode_key("X")
+file restore:
+    user.vim_normal_mode_key("X")
 
 # Checkout/branch maps
 
@@ -71,20 +84,30 @@ file restore: user.vim_normal_mode_key("X")
 
 # Rebase maps
 
-git rebase start: user.vim_normal_mode("ri")
-git rebase continue: user.vim_normal_mode("rr")
-git rebase abort: user.vim_normal_mode("ra")
+git rebase start:
+    user.vim_normal_mode("ri")
+git rebase continue:
+    user.vim_normal_mode("rr")
+git rebase abort:
+    user.vim_normal_mode("ra")
 
 # Miscellaneous maps
 
-[git] status close: user.vim_normal_mode_keys("g q")
-(fugitive | git) help: user.vim_normal_mode_keys("g ?")
+[git] status close:
+    user.vim_normal_mode_keys("g q")
+(fugitive | git) help:
+    user.vim_normal_mode_keys("g ?")
 
 # Navigation
-jump untracked [<number>]: user.vim_normal_mode("gu")
-jump unstaged [<number>]: user.vim_normal_mode("gU")
-jump unpushed [<number>]: user.vim_normal_mode("gp")
-jump unpulled [<number>]: user.vim_normal_mode("gP")
+jump untracked [<number>]:
+    user.vim_normal_mode("gu")
+jump unstaged [<number>]:
+    user.vim_normal_mode("gU")
+jump unpushed [<number>]:
+    user.vim_normal_mode("gp")
+jump unpulled [<number>]:
+    user.vim_normal_mode("gP")
 
 # Global maps
-git status close: user.vim_normal_mode("gq")
+git status close:
+    user.vim_normal_mode("gq")

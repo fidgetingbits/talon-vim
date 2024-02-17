@@ -9,15 +9,19 @@ tag(): user.vim_command_mode
 # We assume that the user may want to use lua in the commandline, so we include some
 tag(): user.lua_nvim
 
-paste register <user.key>: key(ctrl-r {key})
+paste register <user.key>:
+    key(ctrl-r {key})
 
 # Command-line completion: help:cmdline-completion
-(match names | expand that): key(ctrl-a)
+(match names | expand that):
+    key(ctrl-a)
 
 # Show the history buffer: help:cmdline-history
-history: key(ctrl-f)
+history:
+    key(ctrl-f)
 
-literal: key(ctrl-v)
+literal:
+    key(ctrl-v)
 
 # XXX - a the ctrl-r ctrl-<key> stuff
 
@@ -25,11 +29,15 @@ literal: key(ctrl-v)
 
 # regex
 # XXX - should be made part of a generic regex grammar
-state non greedy: "\\{{-}}"
-state greedy: ".*"
-state escaped or: user.insert_between("\\(", "\\|\\)")
+state non greedy:
+    "\\{{-}}"
+state greedy:
+    ".*"
+state escaped or:
+    user.insert_between("\\(", "\\|\\)")
 
-push: key('end')
+push:
+    key('end')
 push <user.unmodified_key>:
     key('end')
     key('{unmodified_key}')
@@ -40,8 +48,10 @@ push that:
     edit.paste()
 
 # neovim lua stuff
-print nvim global: insert_between("print(vim.g.", ")")
-pretty print: user.insert_between("print(vim.inspect(", ")")
+print nvim global:
+    insert_between("print(vim.g.", ")")
+pretty print:
+    user.insert_between("print(vim.inspect(", ")")
 
 # Move too motion mode
 module reload:

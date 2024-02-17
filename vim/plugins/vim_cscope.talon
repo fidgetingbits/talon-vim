@@ -1,12 +1,18 @@
 tag: user.vim_cscope
 -
 
-see scope: ":cs "
-see scope add: ":cs add "
-see scope reset: ":cs reset\n"
-see scope kill: ":cs kill\n"
-see scope show: ":cs show\n"
-see scope help: ":cs\n"
+see scope:
+    ":cs "
+see scope add:
+    ":cs add "
+see scope reset:
+    ":cs reset\n"
+see scope kill:
+    ":cs kill\n"
+see scope show:
+    ":cs show\n"
+see scope help:
+    ":cs\n"
 
 # the keybindings below are based on cscope_maps.vim plugin
 see scope [find] symbol:

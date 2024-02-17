@@ -11,6 +11,9 @@ tag: user.vim_fzf
 win.title: /#FZF/
 -
 
-open in vertical split: key(ctrl-v)
-open in split: key(ctrl-v)
-open in tab: key(ctrl-t)
+open in vertical split:
+    key(ctrl-v)
+open in split:
+    key(ctrl-v)
+open in tab:
+    key(ctrl-t)

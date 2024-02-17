@@ -64,7 +64,6 @@ If you want to try out the exact vim configuration being used by @fidgetingbits,
 nix run FIXME
 ```
 
-
 ## Using Vim Terminals
 
 Since this is the most likely use of this talon plugin, all focus on it first. If you actually want to use him for other
@@ -87,9 +86,6 @@ FIXME: Include a .gif
 Any sort of line plugin that lets you quickly see the mode you're in.
 
 FIXME: Include a screenshot
-
-
-
 
 ## Using Vim As Your Editor
 

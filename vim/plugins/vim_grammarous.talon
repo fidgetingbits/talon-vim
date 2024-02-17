@@ -5,13 +5,17 @@ tag: user.vim_grammarous
 # up with your own mappings for all of the <Plug> calls and then call those
 # mappings instead
 -
-grammar check: user.vim_command_mode(":GrammarousCheck\n")
+grammar check:
+    user.vim_command_mode(":GrammarousCheck\n")
 
-grammar help: user.vim_command_mode(":GrammarousCheck --help\n")
+grammar help:
+    user.vim_command_mode(":GrammarousCheck --help\n")
 
-grammar reset: user.vim_command_mode(":GrammarousReset\n")
+grammar reset:
+    user.vim_command_mode(":GrammarousReset\n")
 
-grammar fix: user.vim_command_mode(':execute "normal \\<Plug>(grammarous-fixit)"\n')
+grammar fix:
+    user.vim_command_mode(':execute "normal \\<Plug>(grammarous-fixit)"\n')
 
 grammar fix all:
     user.vim_command_mode(':execute "normal \\<Plug>(grammarous-fixall)"\n')

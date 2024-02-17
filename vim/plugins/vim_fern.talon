@@ -4,5 +4,7 @@
 tag: user.vim_fern
 -
 
-fern open: user.vim_normal_mode_exterm(":Fern .\n")
-fern bar: user.vim_normal_mode_exterm(":Fern . -drawer\n")
+fern open:
+    user.vim_normal_mode_exterm(":Fern .\n")
+fern bar:
+    user.vim_normal_mode_exterm(":Fern . -drawer\n")
