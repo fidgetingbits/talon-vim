@@ -1,3 +1,5 @@
 # Dev stuff
 __pycache__
 .vscode/settings.json
+# From pre-commit building stuff...
+node_modules/
