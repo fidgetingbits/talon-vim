@@ -5,7 +5,7 @@
 # in command mode or inside of a terminal and wanting to run the command? If
 # you can't imagine doing it, it suits this file over vim.talon
 app: vim
-not tag: user.vim_terminal
+not tag: user.vim_terminal_mode
 and not tag: user.vim_command_mode
 -
 

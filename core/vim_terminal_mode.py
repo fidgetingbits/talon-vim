@@ -7,7 +7,7 @@ from talon import Context, Module, actions, app, settings, ui
 mod = Module()
 ctx = Context()
 ctx.matches = r"""
-tag: user.vim_terminal
+tag: user.vim_terminal_mode
 """
 
 last_title = None

@@ -1,7 +1,7 @@
 win.title: /VIM MODE:t/
 -
 
-tag(): user.vim_terminal
+tag(): user.vim_terminal_mode
 
 normal [mode]:
     key(ctrl-\ ctrl-n)

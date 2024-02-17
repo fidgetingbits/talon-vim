@@ -9,7 +9,7 @@ from talon import Context, actions
 ctx = Context()
 ctx.matches = r"""
 app:vim
-not tag: user.vim_terminal
+not tag: user.vim_terminal_mode
 and not tag: user.vim_command_mode
 """
 
