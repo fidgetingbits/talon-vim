@@ -25,9 +25,15 @@
               pre-commit
               # fix https://discourse.nixos.org/t/non-interactive-bash-errors-from-flake-nix-mkshell/33310
               bashInteractive
-              # fix `cc` replaced by clang, which causes nvim-treesitter compilation error
+              # fix talonfmt building
               gcc
             ];
+            # fix talonfmt runtime error for libstdc++.so.6
+            shellHook = ''
+              export LD_LIBRARY_PATH=${pkgs.lib.makeLibraryPath [
+                pkgs.stdenv.cc.cc
+              ]}
+            '';
           };
         }
       );
