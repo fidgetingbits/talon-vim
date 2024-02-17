@@ -50,3 +50,7 @@ repos:
     hooks:
       - id: talonfmt
         args: ["--in-place"]
+  - repo: https://github.com/nix-community/nixpkgs-fmt
+    rev: f3fac47d6509e6b23c6103bb833353db348c634f
+    hooks:
+      - id: nixpkgs-fmt
