@@ -1,6 +1,3 @@
 # Dev stuff
 __pycache__
-*.sw?
-# Locally generated
 .vscode/settings.json
-.DS_Store
