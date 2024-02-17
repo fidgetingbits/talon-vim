@@ -8,6 +8,13 @@ editing, but rather for powerful terminal interaction.
 - [Talon-Vim](#talon-vim)
   - [UNDER CONSTRUCTION](#under-construction)
   - [Project Layout](#project-layout)
+  - [Installation](#installation)
+    - [Nix](#nix)
+  - [Using Vim Terminals](#using-vim-terminals)
+    - [Recommended Terminal Plugins](#recommended-terminal-plugins)
+      - [vim-zoom](#vim-zoom)
+      - [lualine](#lualine)
+  - [Using Vim As Your Editor](#using-vim-as-your-editor)
   - [Using VIM under Talon](#using-vim-under-talon)
   - [Initial Setup Walkthrough](#initial-setup-walkthrough)
     - [Talon Change - The word `yank`](#talon-change---the-word-yank)
@@ -38,6 +45,53 @@ repo](https://github.com/fidgetingbits/fidgetingbits-talon). Expect lots of docu
 - `vim`: Core talon-vim functionality and vim-plugins
 - `apps`: Terminal utilities that can leverage talon-vim API to add functionality
 - `docs`: More per specific documentation for different features
+
+## Installation
+
+Add the following to your `init.lua` (or equivalent).
+
+```lua
+
+```
+
+TODO: Add `vimscript` equivalent question?
+
+### Nix
+
+If you want to try out the exact vim configuration being used by @fidgetingbits, you can install neovim using nix via
+
+```bash
+nix run FIXME
+```
+
+
+## Using Vim Terminals
+
+Since this is the most likely use of this talon plugin, all focus on it first. If you actually want to use him for other
+basic editing, see the section about editing. Know there is a little bit of overlap because once you're in `NORMAL` or
+`VISUAL` mode in the terminal, you'll be using editing commands to copy data, etc. Is just the command sat you'll be
+using is more limited.
+
+### Recommended Terminal Plugins
+
+I recommend installing the following plugins if you're going to be using the terminal:
+
+#### [vim-zoom](https://github.com/dhruvasagar/vim-zoom)
+
+Zooms in and out of a split.
+
+FIXME: Include a .gif
+
+#### lualine
+
+Any sort of line plugin that lets you quickly see the mode you're in.
+
+FIXME: Include a screenshot
+
+
+
+
+## Using Vim As Your Editor
 
 ## Using VIM under Talon
 
