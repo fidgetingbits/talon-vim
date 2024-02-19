@@ -11,10 +11,8 @@ mod.list(
 
 ctx = Context()
 ctx.matches = r"""
-win.title: /VIM MODE:v/
-win.title: /VIM MODE:V/
+tag: user.vim_visual_mode
 """
-ctx.tags = ["user.vim_visual_mode"]
 
 # These override the ones in normal mode currently set in vim.py
 ctx.lists["user.vim_visual_actions"] = {

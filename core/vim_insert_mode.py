@@ -2,9 +2,8 @@ from talon import Context, actions
 
 ctx = Context()
 ctx.matches = r"""
-win.title: /VIM MODE:i/
+tag: user.vim_insert_mode
 """
-ctx.tags = ["user.vim_insert_mode"]
 
 
 @ctx.action_class("edit")
