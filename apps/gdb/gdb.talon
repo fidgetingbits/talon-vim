@@ -1,7 +1,7 @@
 win.title: /TERM:gdb/
 -
 
-# IMPORTANT: These commands we want from MODE:t and MODE:nt which is why we don't match on app: gdb
+app(): gdb
 
 ###
 # VIM terminal GDB convenience

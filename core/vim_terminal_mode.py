@@ -153,12 +153,12 @@ regex_shell_tags = {
 }
 
 shell_tags = {
-    "zsh": "terminal",
+    # "zsh": "terminal",
     "bash": "terminal",
     "sh": "terminal",
     "ssh": "terminal",
     "sudo": "terminal",
-    "gdb": "user.gdb",
+    # "gdb": "user.gdb",
     "pwndbg": ["user.gdb", "user.pwndbg"],
     "gef": ["user.gdb", "user.gef"],
     "htop": "user.htop",
@@ -244,6 +244,4 @@ def register_events():
     ui.register("win_focus", win_focus_hook)
 
 
-# prevent scary errors in the log by waiting for talon to be fully loaded
-# before registering the events
 app.register("ready", register_events)
