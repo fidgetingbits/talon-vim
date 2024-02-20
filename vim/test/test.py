@@ -1,24 +1,15 @@
 import tempfile
 import time
-from enum import Enum
 
 from talon import Context, Module, actions, app, settings, ui
+
+from ..core.grammar import ActionType, TargetType
 
 ctx = Context()
 
 ctx.matches = r"""
 app: vim
 """
-
-
-class ActionType(Enum):
-    COPY = 1
-    BRING = 2
-
-
-class TargetType(Enum):
-    WORD = 1
-    LINE = 2
 
 
 mod = Module()
