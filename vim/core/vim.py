@@ -1,5 +1,3 @@
-# see doc/vim.md
-
 import logging
 import pprint
 import time
@@ -14,6 +12,7 @@ except Exception:
     has_pynvim = False
 
 logger = logging.getLogger("talon.vim")
+
 
 mod = Module()
 ctx = Context()
