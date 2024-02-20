@@ -1,7 +1,8 @@
 win.title: /TERM:gdb/
 -
 
-app(): gdb
+app ():
+    gdb
 
 ###
 # VIM terminal GDB convenience
