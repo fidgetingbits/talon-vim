@@ -42,9 +42,10 @@ repo](https://github.com/fidgetingbits/fidgetingbits-talon). Expect lots of docu
 
 ## Project Layout
 
-- `vim`: Core talon-vim functionality and vim-plugins
-- `apps`: Terminal utilities that can leverage talon-vim API to add functionality
-- `docs`: More per specific documentation for different features
+- `vim/core`: Core talon-vim functions and objects
+- `vim/apps`: Terminal utilities that can leverage talon-vim API to add functionality
+- `vim/modes`: Mode-specific detection and functionality
+- `vim/docs`: Documentation and tutorials for specific features
 
 ## Installation
 
