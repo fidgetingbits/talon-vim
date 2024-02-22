@@ -154,14 +154,14 @@ regex_shell_tags = {
 
 shell_tags = {
     # "zsh": "terminal",
-    "bash": "terminal",
-    "sh": "terminal",
+    # "bash": "terminal",
+    # "sh": "terminal",
     "ssh": "terminal",
     "sudo": "terminal",
     # "gdb": "user.gdb",
-    "pwndbg": ["user.gdb", "user.pwndbg"],
-    "gef": ["user.gdb", "user.gef"],
-    "htop": "user.htop",
+    # "pwndbg": ["user.gdb", "user.pwndbg"],
+    # "gef": ["user.gdb", "user.gef"],
+    # "htop": "user.htop",
     "taskwarrior-tui": "user.taskwarrior_tui",
     "~/.talon/bin/repl": "user.talon_repl",
     # "~/.talon/bin/repl": ["user.talon_repl", "user.python"], # Doesn't work because of the switch back to language modes
@@ -245,3 +245,9 @@ def register_events():
 
 
 app.register("ready", register_events)
+
+
+@mod.action_class
+class Actions:
+    def get_terminal_application_prompt() -> str:
+        """Return the application prompt for a cli utility. Ex: (gdb)"""

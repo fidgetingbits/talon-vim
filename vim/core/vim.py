@@ -93,6 +93,7 @@ mode_tag_list = [
     "vim_normal_mode",
     "vim_insert_mode",
     "vim_select_mode",
+    "vim_normal_terminal_mode",
 ]
 for entry in mode_tag_list:
     mod.tag(entry, f"tag to load {entry} specific commands")

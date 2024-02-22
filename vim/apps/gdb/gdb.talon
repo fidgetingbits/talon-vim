@@ -1,8 +1,7 @@
-win.title: /TERM:gdb/
+app: gdb
+not app: gdb
+and tag: user.gdb
 -
-
-app ():
-    gdb
 
 ###
 # VIM terminal GDB convenience
@@ -181,16 +180,6 @@ bring <user.ordinals> hex <number>$:
     edit.paste()
     sleep(100ms)
     key(enter)
-
-# FIXME: The prompts could be configurable with a setting
-
-go last prompt:
-    user.vim_any_motion_mode_exterm("0?(gdb)\\|pwndbg>\n")
-    user.vim_any_motion_mode("0f l")
-
-go next prompt:
-    user.vim_any_motion_mode_exterm("0/(gdb)\\|pwndbg>\n")
-    user.vim_any_motion_mode("0f l")
 
 # XXX - add something for highlighting and entire command that was just
 # executed

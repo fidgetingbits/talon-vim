@@ -3,8 +3,21 @@ from talon import Module
 mod = Module()
 apps = mod.apps
 
+# FIXME: Instead of having /MODE:t/ in all of these, use a helper. We need to avoid MODE:nt because
+# we don't want the specific app set for that mode, as it will enable a bunch of unwanted commands
+
 apps.gdb = """
 win.title: /TERM:gdb/
+and win.title: /MODE:t/
+"""
+
+apps.zsh = """
+win.title: /TERM:zsh/
+and win.title: /MODE:t/
+"""
+
+apps.htop = """
+win.title: /TERM:htop/
 and win.title: /MODE:t/
 """
 
