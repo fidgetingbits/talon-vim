@@ -1,6 +1,5 @@
 win.title: /TERM:gef/
 -
 
-app ():
-    gdb
+app(): gdb
 tag(): user.gef

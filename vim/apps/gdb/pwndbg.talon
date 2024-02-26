@@ -1,6 +1,5 @@
 win.title: /TERM:pwndbg/
 -
 
-app ():
-    gdb
+app(): gdb
 tag(): user.pwndbg
