@@ -11,6 +11,6 @@ tag: user.pwndbg
 
 @ctx.action_class("user")
 class UserActions:
-    def get_application_prompt():
+    def get_terminal_application_prompt():
         # FIXME: Not sure how to override this for gdb, so match both
         return "(gdb)\\|pwndbg>"
