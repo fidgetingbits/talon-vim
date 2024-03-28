@@ -40,10 +40,3 @@ class EditActions:
 
     def down():
         actions.key("down")
-
-    # FIXME: This wrong depending on the terminal. Gnome is ctrl--
-    def zoom_out():
-        actions.key("ctrl-shift--")
-
-    def zoom_in():
-        actions.key("ctrl-shift-+")
