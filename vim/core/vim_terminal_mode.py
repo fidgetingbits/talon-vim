@@ -158,6 +158,7 @@ shell_tags = {
     # "sh": "terminal",
     "ssh": "terminal",
     "sudo": "terminal",
+    "edit": "terminal",  # This matches when edit is hung waiting for vscode
     # "gdb": "user.gdb",
     # "pwndbg": ["user.gdb", "user.pwndbg"],
     # "gef": ["user.gdb", "user.gef"],
