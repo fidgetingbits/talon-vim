@@ -752,7 +752,7 @@ new (term | terminal):
     user.vim_normal_mode_exterm(":term\n")
 
 force new (term | terminal):
-    user.vim_normal_mode_exterm(":term!\n")
+    user.vim_normal_mode_exterm(":te0x6rm!\n")
 
 [new] (split | horizontal) (term | terminal):
     # NOTE: if your using zsh you might have to switch this, though depending
@@ -762,6 +762,22 @@ force new (term | terminal):
 [new] vertical split (term | terminal):
     user.vim_normal_mode_exterm(":vsplit term://bash\n")
 
+# Spawn terminals and keep the same directory as the current terminal
+# NOTE: Only works if the originating split is a terminal atm
+new term here:
+    # FIXME: user.zsh_get_cwd() should be generic and overridden for zsh
+    path = user.zsh_get_cwd()
+    user.vim_normal_mode_exterm(":term cd {path} && zsh\n")
+
+(split term here|river term here):
+    # FIXME: user.zsh_get_cwd() should be generic and overridden for zsh
+    path = user.zsh_get_cwd()
+    user.vim_normal_mode_exterm(":split | term cd {path} && zsh\n")
+
+(vertical split term here|pillar term here):
+    # FIXME: user.zsh_get_cwd() should be generic and overridden for zshs
+    path = user.zsh_get_cwd()
+    user.vim_normal_mode_exterm(":vsplit | term cd {path} && zsh\n")
 ###
 # Functions
 ###
