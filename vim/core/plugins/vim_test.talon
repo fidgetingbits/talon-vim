@@ -3,12 +3,12 @@ tag: user.vim_test
 -
 
 test nearest:
-    user.vim_command_mode(":TestNearest")
+    user.vim_run_command(":TestNearest")
 test file:
-    user.vim_command_mode(":TestFile")
+    user.vim_run_command(":TestFile")
 test suite:
-    user.vim_command_mode(":TestSuite")
+    user.vim_run_command(":TestSuite")
 test last:
-    user.vim_command_mode(":TestLast")
+    user.vim_run_command(":TestLast")
 test visit:
-    user.vim_command_mode(":TestVisit")
+    user.vim_run_command(":TestVisit")

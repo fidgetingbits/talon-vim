@@ -14,7 +14,7 @@ win.title: /VIM MODE:nt/
 class UserActions:
     def draft_app_submit(text: str):
         # Re-enter terminal mode
-        actions.user.vim_set_terminal_mode()
+        actions.user.vim_set_terminal()
         actions.sleep("100ms")
         # actions.insert("i")
         actions.sleep("100ms")

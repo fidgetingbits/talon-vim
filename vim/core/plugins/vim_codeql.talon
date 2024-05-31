@@ -4,25 +4,25 @@ tag: user.vim_codeql
 -
 
 query set database:
-    user.vim_command_mode(":SetDatabase ")
+    user.vim_run_command(":SetDatabase ")
 query set last database:
-    user.vim_command_mode(":SetDatabase ")
+    user.vim_run_command(":SetDatabase ")
     key(up enter)
 query unset database:
-    user.vim_command_mode(":UnsetDatabase ")
+    user.vim_run_command(":UnsetDatabase ")
 query run:
-    user.vim_command_mode(":RunQuery\n")
+    user.vim_run_command(":RunQuery\n")
 query quick eval:
-    user.vim_command_mode(":QuickEval\n")
+    user.vim_run_command(":QuickEval\n")
 # this is still load previous results
 query history:
-    user.vim_command_mode(":History\n")
+    user.vim_run_command(":History\n")
 query stop history:
-    user.vim_command_mode(":StopServer\n")
+    user.vim_run_command(":StopServer\n")
 query syntax tree:
-    user.vim_command_mode(":PrintAST\n")
+    user.vim_run_command(":PrintAST\n")
 query load serif:
-    user.vim_command_mode(":LoadSarif")
+    user.vim_run_command(":LoadSarif")
 # This shows the database bar
 query archive tree:
-    user.vim_command_mode(":ArchiveTree\n")
+    user.vim_run_command(":ArchiveTree\n")

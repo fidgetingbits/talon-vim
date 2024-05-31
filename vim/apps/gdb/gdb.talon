@@ -19,27 +19,27 @@ and tag: user.gdb
 
 # Assumes you are already on a line with hex addresses
 copy <user.ordinals> (hex value | address):
-    user.vim_command_mode(":call search(\"0x\", 'c', line('.'))\n")
+    user.vim_run_command(":call search(\"0x\", 'c', line('.'))\n")
     insert("{ordinals-1}n")
     insert("yw")
-    user.vim_command_mode(":set nohls\n")
+    user.vim_run_command(":set nohls\n")
 
 # this has to be updated to use the new api
 #(hexdump|matrix) <user.ordinals> (hex value|address):
-#    user.vim_command_mode(":call search(\"0x\", 'c', line('.'))\n")
+#    user.vim_run_command(":call search(\"0x\", 'c', line('.'))\n")
 #    insert("{ordinals-1}n")
 #    insert("yw")
-#    user.vim_command_mode(":set nohls\n")
-#    user.vim_set_insert_mode()
+#    user.vim_run_command(":set nohls\n")
+#    user.vim_set_insert()
 #    # XXX - need to make this tweakable
 #    insert("x/10gx ")
 #    edit.paste()
 #    key(enter)
 
 go <user.ordinals> (hex value | address):
-    user.vim_command_mode(":call search(\"0x\", 'c', line('.'))\n")
+    user.vim_run_command(":call search(\"0x\", 'c', line('.'))\n")
     insert("{ordinals-1}n")
-    user.vim_command_mode(":set nohls\n")
+    user.vim_run_command(":set nohls\n")
 
 (hexdump | matrix) [this] address:
     insert("yiw")
@@ -52,56 +52,56 @@ go <user.ordinals> (hex value | address):
 
 # relative
 copy line <number> (hex value | address):
-    user.vim_normal_mode_exterm("{number}k0")
-    user.vim_command_mode(":call search(\"0x\", 'c', line('.'))\n")
-    user.vim_normal_mode("yw")
-    user.vim_command_mode(":set nohls\n")
+    user.vim_run_normal_exterm("{number}k0")
+    user.vim_run_command(":call search(\"0x\", 'c', line('.'))\n")
+    user.vim_run_normal("yw")
+    user.vim_run_command(":set nohls\n")
 
 # relative
 # no arg, is just line above
 bring hex:
-    user.vim_normal_mode_exterm("k0")
-    user.vim_command_mode(":call search(\"0x\", 'c', line('.'))\n")
-    user.vim_normal_mode("yw")
-    user.vim_command_mode(":set nohls\n")
-    user.vim_set_insert_mode()
+    user.vim_run_normal_exterm("k0")
+    user.vim_run_command(":call search(\"0x\", 'c', line('.'))\n")
+    user.vim_run_normal("yw")
+    user.vim_run_command(":set nohls\n")
+    user.vim_set_insert()
     edit.paste()
 
 # copy and paste the first hex value from the specified relative line
 # relative
 bring hex <number>:
-    user.vim_normal_mode_exterm("{number}k0")
-    user.vim_command_mode(":call search(\"0x\", 'c', line('.'))\n")
-    user.vim_normal_mode("yw")
-    user.vim_command_mode(":set nohls\n")
-    user.vim_set_insert_mode()
+    user.vim_run_normal_exterm("{number}k0")
+    user.vim_run_command(":call search(\"0x\", 'c', line('.'))\n")
+    user.vim_run_normal("yw")
+    user.vim_run_command(":set nohls\n")
+    user.vim_set_insert()
     edit.paste()
 
 # copy and paste the Nth hex value from the specified relative line
 # note for numbers like 70 actual individual digits really fast is more
 # accurate
 bring <user.ordinals> hex <number>$:
-    user.vim_normal_mode_exterm("{number}k0")
+    user.vim_run_normal_exterm("{number}k0")
     # set the search pattern for 'n' usage
     insert("/\\c0x\n")
     key('0')
     # do the actual search to include results under the cursor
-    user.vim_command_mode(":call search(\"0x\", 'c', line('.'))\n")
+    user.vim_run_command(":call search(\"0x\", 'c', line('.'))\n")
     insert("{ordinals-1}n")
     insert("ye")
-    user.vim_command_mode(":set nohls\n")
+    user.vim_run_command(":set nohls\n")
 
-    user.vim_set_insert_mode()
+    user.vim_set_insert()
     edit.paste()
 
 ## absolute
 (hexdump | matrix) line <number>$:
-    user.vim_normal_mode_exterm(":{number}\n")
+    user.vim_run_normal_exterm(":{number}\n")
     insert("^")
-    user.vim_command_mode(":call search(\"0x\", 'c', line('.'))\n")
+    user.vim_run_command(":call search(\"0x\", 'c', line('.'))\n")
     insert("yiw")
-    user.vim_command_mode(":set nohls\n")
-    user.vim_set_insert_mode()
+    user.vim_run_command(":set nohls\n")
+    user.vim_set_insert()
     # XXX - need to make this tweakable
     insert("x/100gx ")
     edit.paste()
@@ -110,12 +110,12 @@ bring <user.ordinals> hex <number>$:
 
 # relative
 (hexdump | matrix) [relative] <number>$:
-    user.vim_normal_mode_exterm("{number+1}k")
+    user.vim_run_normal_exterm("{number+1}k")
     insert("^")
-    user.vim_command_mode(":call search(\"0x\", 'c', line('.'))\n")
+    user.vim_run_command(":call search(\"0x\", 'c', line('.'))\n")
     insert("yiw")
-    user.vim_command_mode(":set nohls\n")
-    user.vim_set_insert_mode()
+    user.vim_run_command(":set nohls\n")
+    user.vim_set_insert()
     # XXX - need to make this tweakable
     insert("x/100gx ")
     edit.paste()
@@ -124,12 +124,12 @@ bring <user.ordinals> hex <number>$:
 
 # relative
 (hexdump | matrix) [relative] down [line] <number>$:
-    user.vim_normal_mode_exterm("{number+1}j")
+    user.vim_run_normal_exterm("{number+1}j")
     insert("^")
-    user.vim_command_mode(":call search(\"0x\", 'c', line('.'))\n")
+    user.vim_run_command(":call search(\"0x\", 'c', line('.'))\n")
     insert("yiw")
-    user.vim_command_mode(":set nohls\n")
-    user.vim_set_insert_mode()
+    user.vim_run_command(":set nohls\n")
+    user.vim_set_insert()
     # XXX - need to make this tweakable
     insert("x/100gx ")
     edit.paste()
@@ -138,13 +138,13 @@ bring <user.ordinals> hex <number>$:
 
 # absolute
 (hexdump | matrix) line <number> <user.ordinals>$:
-    user.vim_normal_mode_exterm(":{number}\n")
+    user.vim_run_normal_exterm(":{number}\n")
     insert("^")
-    user.vim_command_mode(":call search(\"0x\", 'c', line('.'))\n")
+    user.vim_run_command(":call search(\"0x\", 'c', line('.'))\n")
     insert("{ordinals-1}n")
     insert("yw")
-    user.vim_command_mode(":set nohls\n")
-    user.vim_set_insert_mode()
+    user.vim_run_command(":set nohls\n")
+    user.vim_set_insert()
     # XXX - need to make this tweakable
     insert("x/100gx ")
     edit.paste()
@@ -153,13 +153,13 @@ bring <user.ordinals> hex <number>$:
 
 # relative
 (hexdump | matrix) [relative] <user.ordinals> down [line] <number>$:
-    user.vim_normal_mode_exterm("{number+1}j")
+    user.vim_run_normal_exterm("{number+1}j")
     insert("^")
-    user.vim_command_mode(":call search(\"0x\", 'c', line('.'))\n")
+    user.vim_run_command(":call search(\"0x\", 'c', line('.'))\n")
     insert("yiw")
     insert("{ordinals-1}n")
-    user.vim_command_mode(":set nohls\n")
-    user.vim_set_insert_mode()
+    user.vim_run_command(":set nohls\n")
+    user.vim_set_insert()
     # XXX - need to make this tweakable
     insert("x/100gx ")
     edit.paste()
@@ -168,13 +168,13 @@ bring <user.ordinals> hex <number>$:
 
 # for use with relative number lines
 (hexdump | matrix) [relative] <user.ordinals> up [line] <number>$:
-    user.vim_normal_mode_exterm("{number+1}k")
+    user.vim_run_normal_exterm("{number+1}k")
     insert("^")
-    user.vim_command_mode(":call search(\"0x\", 'c', line('.'))\n")
+    user.vim_run_command(":call search(\"0x\", 'c', line('.'))\n")
     insert("yiw")
     insert("{ordinals-1}n")
-    user.vim_command_mode(":set nohls\n")
-    user.vim_set_insert_mode()
+    user.vim_run_command(":set nohls\n")
+    user.vim_set_insert()
     # XXX - need to make this tweakable
     insert("x/100gx ")
     edit.paste()

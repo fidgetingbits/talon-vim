@@ -3,10 +3,10 @@ tag: user.vim_leap
 -
 
 (leap) (left):
-    user.vim_normal_mode_exterm("S")
+    user.vim_run_normal_exterm("S")
 (leap) (right):
-    user.vim_normal_mode_exterm("s")
+    user.vim_run_normal_exterm("s")
 speed global up:
-    user.vim_normal_mode_exterm("gS")
+    user.vim_run_normal_exterm("gS")
 speed global down:
-    user.vim_normal_mode_exterm("gs")
+    user.vim_run_normal_exterm("gs")

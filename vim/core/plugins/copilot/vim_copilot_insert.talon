@@ -1,5 +1,5 @@
 tag: user.vim_copilot
-and tag: user.vim_insert_mode
+and tag: user.vim_mode_insert
 -
 
 ([co] pilot | keep):

@@ -8,28 +8,28 @@ win.title: /FILETYPE:\[mason\]/
 # still force all of these to use normal mode.
 
 all:
-    user.vim_normal_mode("1")
+    user.vim_run_normal("1")
 L S P:
-    user.vim_normal_mode("2")
+    user.vim_run_normal("2")
 dap:
-    user.vim_normal_mode("3")
+    user.vim_run_normal("3")
 linter:
-    user.vim_normal_mode("4")
+    user.vim_run_normal("4")
 formatter:
-    user.vim_normal_mode("5")
+    user.vim_run_normal("5")
 install:
-    user.vim_normal_mode("i")
+    user.vim_run_normal("i")
 uninstall:
-    user.vim_normal_mode("X")
+    user.vim_run_normal("X")
 update:
-    user.vim_normal_mode("u")
+    user.vim_run_normal("u")
 update all:
-    user.vim_normal_mode("U")
+    user.vim_run_normal("U")
 check new:
-    user.vim_normal_mode("c")
+    user.vim_run_normal("c")
 check new all:
-    user.vim_normal_mode("C")
+    user.vim_run_normal("C")
 [mason] help:
-    user.vim_normal_mode("g?")
+    user.vim_run_normal("g?")
 [mason] close:
-    user.vim_normal_mode("q")
+    user.vim_run_normal("q")

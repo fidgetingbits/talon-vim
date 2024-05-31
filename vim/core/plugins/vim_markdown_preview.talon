@@ -3,4 +3,4 @@ tag: user.vim_markdown_preview
 -
 
 markdown preview:
-    user.vim_command_mode(":MarkdownPreview\n")
+    user.vim_run_command(":MarkdownPreview\n")

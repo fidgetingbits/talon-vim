@@ -2,7 +2,7 @@
 # Our window title will look something like this:
 # IO VIM MODE:n RPC:/tmp/nvimWP0y5W/0  ([Command Line]) [Command Line]
 app: vim
-tag: user.vim_normal_mode
+tag: user.vim_mode_normal
 and win.title: /[Command Line]/
 -
 

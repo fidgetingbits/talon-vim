@@ -5,4 +5,4 @@ tag: user.vim_easy_align
 # XXX - a default four the number of selections
 # a default for the key that can be urine on
 align <user.vim_motions_all_adjust>:
-    user.vim_any_motion_mode("{vim_motions_all_adjust}ga")
+    user.vim_run_any_motion("{vim_motions_all_adjust}ga")

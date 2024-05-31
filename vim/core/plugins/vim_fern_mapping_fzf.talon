@@ -6,8 +6,8 @@ and tag: user.vim_fern_mapping_fzf
 -
 
 fuzz files:
-    user.vim_normal_mode_exterm("ff")
+    user.vim_run_normal_exterm("ff")
 fuzz paths:
-    user.vim_normal_mode_exterm("fd")
+    user.vim_run_normal_exterm("fd")
 fuzz:
-    user.vim_normal_mode_exterm("fa")
+    user.vim_run_normal_exterm("fa")

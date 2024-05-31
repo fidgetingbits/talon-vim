@@ -1,7 +1,7 @@
 tag: user.vim_null_ls
 -
 L S (show | info):
-    user.vim_command_mode(":exe ':NullLsInfo'\n")
+    user.vim_run_command(":exe ':NullLsInfo'\n")
 
 L S log:
-    user.vim_command_mode(":exe ':NullLsLog'\n")
+    user.vim_run_command(":exe ':NullLsLog'\n")

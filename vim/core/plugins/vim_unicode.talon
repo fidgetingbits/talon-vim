@@ -4,18 +4,18 @@ tag: user.vim_unicode
 -
 
 unicode graphs:
-    user.vim_normal_mode_exterm(":Digraphs ")
+    user.vim_run_normal_exterm(":Digraphs ")
 unicode name:
-    user.vim_normal_mode_exterm(":UnicodeName ")
+    user.vim_run_normal_exterm(":UnicodeName ")
 unicode table:
-    user.vim_normal_mode_exterm(":UnicodeTable ")
+    user.vim_run_normal_exterm(":UnicodeTable ")
 unicode search:
-    user.vim_normal_mode_exterm(":UnicodeSearch ")
+    user.vim_run_normal_exterm(":UnicodeSearch ")
 unicode add:
-    user.vim_normal_mode_exterm(":UnicodeSearch! ")
+    user.vim_run_normal_exterm(":UnicodeSearch! ")
 unicode download:
-    user.vim_normal_mode_exterm(":DownloadUnicode ")
+    user.vim_run_normal_exterm(":DownloadUnicode ")
 unicode cache:
-    user.vim_normal_mode_exterm(":UnicodeCache ")
+    user.vim_run_normal_exterm(":UnicodeCache ")
 unicode help:
-    user.vim_normal_mode_exterm(":h unicode-plugin\n")
+    user.vim_run_normal_exterm(":h unicode-plugin\n")

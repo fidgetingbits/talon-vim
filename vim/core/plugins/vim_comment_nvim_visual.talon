@@ -1,5 +1,5 @@
 tag: user.vim_comment_nvim
-and tag: user.vim_visual_mode
+and tag: user.vim_mode_visual
 -
 
 comment [that]:

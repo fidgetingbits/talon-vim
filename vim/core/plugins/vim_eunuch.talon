@@ -2,18 +2,18 @@ tag: user.vim_eunuch
 -
 
 file (remove | delete):
-    user.vim_command_mode(":Delete ")
+    user.vim_run_command(":Delete ")
 file un link:
-    user.vim_command_mode(":Unlink ")
+    user.vim_run_command(":Unlink ")
 file move:
-    user.vim_command_mode(":Move ")
+    user.vim_run_command(":Move ")
 file rename:
-    user.vim_command_mode(":Rename ")
+    user.vim_run_command(":Rename ")
 file change mode:
-    user.vim_command_mode(":Chmod ")
+    user.vim_run_command(":Chmod ")
 folder make:
-    user.vim_command_mode(":Mkdir ")
+    user.vim_run_command(":Mkdir ")
 file privilege write:
-    user.vim_command_mode(":SudoWrite ")
+    user.vim_run_command(":SudoWrite ")
 file privilege edit:
-    user.vim_command_mode(":SudoEdit ")
+    user.vim_run_command(":SudoEdit ")

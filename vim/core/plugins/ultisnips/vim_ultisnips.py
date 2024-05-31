@@ -20,5 +20,5 @@ class user_actions:
 
     def snippet_insert(text: str):
         """Inserts a snippet"""
-        actions.user.vim_insert_mode(text)
+        actions.user.vim_run_insert(text)
         actions.key("tab")

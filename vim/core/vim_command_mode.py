@@ -2,7 +2,7 @@ from talon import Context, actions
 
 ctx = Context()
 ctx.matches = r"""
-tag: user.vim_command_mode
+tag: user.vim_mode_command
 """
 
 

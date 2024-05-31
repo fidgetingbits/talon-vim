@@ -8,7 +8,7 @@ win.title: /FILETYPE:\[TelescopePrompt\]/
 # it registers a callback that prevents the preservation, then on registers on
 #  context switch
 cancel:
-    user.vim_insert_mode_key("ctrl-c")
+    user.vim_run_insert_key("ctrl-c")
 # this is mostly due to bad habits from fzf. the idea is to encourage me to
 # start using the explicit mode switching commands
 escape:

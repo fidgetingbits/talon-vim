@@ -5,6 +5,6 @@ and code.language: markdown
 
 # XXX - unsupported by current snippets.py
 snip table <number_small> <number_small>:
-    user.vim_insert_mode("tb(")
+    user.vim_run_insert("tb(")
     insert("{number_small_1}{number_small_2})")
     key(tab)

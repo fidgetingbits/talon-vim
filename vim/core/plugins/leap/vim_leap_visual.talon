@@ -1,5 +1,5 @@
 tag: user.vim_leap
-and tag: user.vim_visual_mode
+and tag: user.vim_mode_visual
 -
 
 hop to:

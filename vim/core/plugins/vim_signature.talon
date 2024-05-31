@@ -3,16 +3,16 @@ tag: user.vim_signature
 -
 
 signature toggle:
-    user.vim_normal_mode_exterm(":SignatureToggle\n")
+    user.vim_run_normal_exterm(":SignatureToggle\n")
 signature refresh:
-    user.vim_normal_mode_exterm(":SignatureRefresh\n")
+    user.vim_run_normal_exterm(":SignatureRefresh\n")
 mark here:
-    user.vim_normal_mode_exterm("m,")
+    user.vim_run_normal_exterm("m,")
 mark toggle:
-    user.vim_normal_mode_exterm("m.")
+    user.vim_run_normal_exterm("m.")
 mark remove:
-    user.vim_normal_mode_exterm("m-")
+    user.vim_run_normal_exterm("m-")
 mark next:
-    user.vim_normal_mode_exterm("]`")
+    user.vim_run_normal_exterm("]`")
 mark last:
-    user.vim_normal_mode_exterm("[`")
+    user.vim_run_normal_exterm("[`")

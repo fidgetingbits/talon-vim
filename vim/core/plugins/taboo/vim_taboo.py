@@ -12,4 +12,4 @@ tag: user.vim_taboo
 class user_actions:
     # FIXME: They should have some formatter probably
     def tab_rename(name):
-        actions.user.vim_normal_mode_exterm(f":TabooRename {name}")
+        actions.user.vim_run_normal_exterm(f":TabooRename {name}")

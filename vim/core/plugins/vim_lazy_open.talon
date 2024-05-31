@@ -6,24 +6,24 @@ win.title: /FILETYPE:\[on\]/
 # called on initial startup
 
 install:
-    user.vim_normal_mode("I")
+    user.vim_run_normal("I")
 update:
-    user.vim_normal_mode("U")
+    user.vim_run_normal("U")
 sync:
-    user.vim_normal_mode("S")
+    user.vim_run_normal("S")
 clean:
-    user.vim_normal_mode("X")
+    user.vim_run_normal("X")
 check:
-    user.vim_normal_mode("C")
+    user.vim_run_normal("C")
 log:
-    user.vim_normal_mode("L")
+    user.vim_run_normal("L")
 restore:
-    user.vim_normal_mode("R")
+    user.vim_run_normal("R")
 profile:
-    user.vim_normal_mode("P")
+    user.vim_run_normal("P")
 debug:
-    user.vim_normal_mode("D")
+    user.vim_run_normal("D")
 help:
-    user.vim_normal_mode("?")
+    user.vim_run_normal("?")
 close:
-    user.vim_normal_mode("q")
+    user.vim_run_normal("q")

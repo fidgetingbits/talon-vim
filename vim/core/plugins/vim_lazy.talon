@@ -2,18 +2,18 @@ tag: user.vim_lazy
 -
 
 plugins (show | home):
-    user.vim_normal_mode_exterm(":Lazy home\n")
+    user.vim_run_normal_exterm(":Lazy home\n")
 plugins update:
-    user.vim_normal_mode_exterm(":Lazy update\n")
+    user.vim_run_normal_exterm(":Lazy update\n")
 plugins health:
-    user.vim_normal_mode_exterm(":Lazy health\n")
+    user.vim_run_normal_exterm(":Lazy health\n")
 plugins sync:
-    user.vim_normal_mode_exterm(":Lazy sync\n")
+    user.vim_run_normal_exterm(":Lazy sync\n")
 plugins check:
-    user.vim_normal_mode_exterm(":Lazy check\n")
+    user.vim_run_normal_exterm(":Lazy check\n")
 plugins clean:
-    user.vim_normal_mode_exterm(":Lazy clean\n")
+    user.vim_run_normal_exterm(":Lazy clean\n")
 plugins log:
-    user.vim_normal_mode_exterm(":Lazy log\n")
+    user.vim_run_normal_exterm(":Lazy log\n")
 plugins clear:
-    user.vim_normal_mode_exterm(":Lazy clear\n")
+    user.vim_run_normal_exterm(":Lazy clear\n")

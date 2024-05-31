@@ -1,4 +1,4 @@
-tag: user.vim_terminal_mode
+tag: user.vim_mode_terminal
 -
 
 normal [mode]:
@@ -21,123 +21,123 @@ exit terminal:
     insert("ZQ")
 
 bring line <number_small>:
-    user.vim_normal_mode_exterm("{number_small}k")
+    user.vim_run_normal_exterm("{number_small}k")
     key('0')
     insert("y$")
-    user.vim_set_insert_mode()
+    user.vim_set_insert()
     edit.paste()
     key(space)
 
 bring line fuzzy <user.text>:
-    user.vim_normal_mode_exterm(":call search(\"{text}\", 'bcW')\n")
+    user.vim_run_normal_exterm(":call search(\"{text}\", 'bcW')\n")
     insert("y$")
     insert(":set nohls\n")
-    user.vim_set_insert_mode()
+    user.vim_set_insert()
     edit.paste()
 
 bring line <number_small> <user.text>:
-    user.vim_normal_mode_exterm("{number_small}k")
+    user.vim_run_normal_exterm("{number_small}k")
     key('0')
     insert(":call search(\"{text}\", 'c', line('.'))\n")
     insert("y$")
     insert(":set nohls\n")
-    user.vim_set_insert_mode()
+    user.vim_set_insert()
     edit.paste()
 
 bring line <number_small> <user.ordinals>:
-    user.vim_normal_mode_exterm("{number_small}k")
+    user.vim_run_normal_exterm("{number_small}k")
     key('0')
     insert("{ordinals-1}W")
     insert("y$")
-    user.vim_set_insert_mode()
+    user.vim_set_insert()
     edit.paste()
     key(space)
 
 yank words <number_small>:
-    user.vim_normal_mode_exterm("{number_small}k")
+    user.vim_run_normal_exterm("{number_small}k")
     key('0')
     insert("yE")
     # See `:help pattern`
     # \_s   - match single white space
     # \{2,} - at least two in a row
-    user.vim_command_mode(":set nohls | let @+=substitute(strtrans(@+), '\\_s\\{{2,}}', '', 'g')\n")
+    user.vim_run_command(":set nohls | let @+=substitute(strtrans(@+), '\\_s\\{{2,}}', '', 'g')\n")
     # XXX - should this be terminal mode?
-    user.vim_set_insert_mode()
+    user.vim_set_insert()
 
 yank words (last <number_small> | <number_small> last):
-    user.vim_normal_mode_exterm("{number_small}k")
+    user.vim_run_normal_exterm("{number_small}k")
     insert("$T ")
     insert("yE")
-    user.vim_set_insert_mode()
+    user.vim_set_insert()
     edit.paste()
     key(space)
 
 yank words <number_small> <user.ordinals>:
-    user.vim_normal_mode_exterm("{number_small}k")
+    user.vim_run_normal_exterm("{number_small}k")
     key('0')
     insert("{ordinals-1}W")
     insert("yE")
-    user.vim_set_insert_mode()
+    user.vim_set_insert()
 
 # copy from the specified key to the end of the line
 yank words <number_small> <user.unmodified_key>:
-    user.vim_normal_mode_exterm("{number_small}k")
+    user.vim_run_normal_exterm("{number_small}k")
     key('0')
     insert("f{unmodified_key}")
     insert("yE")
-    user.vim_set_insert_mode()
+    user.vim_set_insert()
 
 # XXX - it would be nice to have this you something like treesitter on a single
 # line (even though it would be broken syntax) and be able to specify which
 # element we want...
 # copy a function name on the specified line
 yank words <number_small> funk:
-    user.vim_normal_mode_exterm("{number_small}k")
+    user.vim_run_normal_exterm("{number_small}k")
     key('0')
     insert("f(")
     insert("yB")
-    user.vim_set_insert_mode()
+    user.vim_set_insert()
 
 # echo commands are for copying words from a given point, and then pasting them
 bring <number_small>:
     #    user.vim_terminal_echo_line_number("{number_small}")
-    user.vim_normal_mode_exterm("{number_small}k")
+    user.vim_run_normal_exterm("{number_small}k")
     key('0')
     insert("yE")
     # See `:help pattern`
     # \_s   - match single white space
     # \{2,} - at least two in a row
-    user.vim_command_mode(":set nohls | let @+=substitute(strtrans(@+), '\\_s\\{{2,}}', '', 'g')\n")
-    user.vim_set_insert_mode()
+    user.vim_run_command(":set nohls | let @+=substitute(strtrans(@+), '\\_s\\{{2,}}', '', 'g')\n")
+    user.vim_set_insert()
     edit.paste()
     key(space)
 
 bring (last <number_small> | <number_small> last):
-    user.vim_normal_mode_exterm("{number_small}k")
+    user.vim_run_normal_exterm("{number_small}k")
     insert("$T ")
     insert("yE")
-    user.vim_set_insert_mode()
+    user.vim_set_insert()
     edit.paste()
     key(space)
 
 bring <number_small> <user.ordinals>:
-    user.vim_normal_mode_exterm("{number_small}k")
+    user.vim_run_normal_exterm("{number_small}k")
     key('0')
     insert("{ordinals-1}W")
     insert("yE")
 
-    user.vim_set_insert_mode()
+    user.vim_set_insert()
     edit.paste()
     key(space)
 
 # copy from the specified key to the end of the line
 bring <number_small> <user.unmodified_key>:
-    user.vim_normal_mode_exterm("{number_small}k")
+    user.vim_run_normal_exterm("{number_small}k")
     key('0')
     insert("f{unmodified_key}")
     insert("yE")
 
-    user.vim_set_insert_mode()
+    user.vim_set_insert()
     edit.paste()
     # disable weird highlight
     key(down:5)
@@ -147,41 +147,41 @@ bring <number_small> <user.unmodified_key>:
 # element we want...
 # copy a function name on the specified line
 bring <number_small> funk:
-    user.vim_normal_mode_exterm("{number_small}k")
+    user.vim_run_normal_exterm("{number_small}k")
     key('0')
     insert("f(")
     insert("yB")
 
-    user.vim_set_insert_mode()
+    user.vim_set_insert()
     edit.paste()
     # disable weird highlight
     key(down:5)
 
 # yankee are commands are for copying the remaining line from a given point
 yank line <number_small>:
-    user.vim_normal_mode_exterm("{number_small}k")
+    user.vim_run_normal_exterm("{number_small}k")
     key('0')
     insert("y$")
-    user.vim_command_mode(":let @+=substitute(strtrans(@+), '\\_s\\{{2,}}', '', 'g')\n")
-    user.vim_set_insert_mode()
+    user.vim_run_command(":let @+=substitute(strtrans(@+), '\\_s\\{{2,}}', '', 'g')\n")
+    user.vim_set_insert()
 
 yank line <number_small> <user.ordinals>:
-    user.vim_normal_mode_exterm("{number_small}k")
+    user.vim_run_normal_exterm("{number_small}k")
     key('0')
     insert("{ordinals-1}W")
     insert("y$")
-    user.vim_set_insert_mode()
+    user.vim_set_insert()
 
 yank line (last <number_small> | <number_small> last):
-    user.vim_normal_mode_exterm("{number_small}k")
+    user.vim_run_normal_exterm("{number_small}k")
     insert("$T ")
     insert("yE")
-    user.vim_set_insert_mode()
+    user.vim_set_insert()
 
 yank line command:
-    user.vim_normal_mode_exterm("0f y$")
-    user.vim_command_mode(":let @+=substitute(strtrans(@+), '\\_s\\{{2,}}', '', 'g')\n")
-    user.vim_set_insert_mode()
+    user.vim_run_normal_exterm("0f y$")
+    user.vim_run_command(":let @+=substitute(strtrans(@+), '\\_s\\{{2,}}', '', 'g')\n")
+    user.vim_set_insert()
 
     # this is used for pexpect interactive environments
     # https://pexpect.readthedocs.io/en/stable/api/pexpect.html#spawn-class
@@ -196,55 +196,55 @@ python escape:
 # number, in it will jump to that point copy the line and then jump you in
 pivot line <number_small>:
     insert("cd ")
-    user.vim_normal_mode_exterm("{number_small}k")
+    user.vim_run_normal_exterm("{number_small}k")
     key('0')
     insert("y$")
-    user.vim_command_mode(":let @+=substitute(strtrans(@+), '\\_s\\{{2,}}', '', 'g')\n")
-    user.vim_set_insert_mode()
+    user.vim_run_command(":let @+=substitute(strtrans(@+), '\\_s\\{{2,}}', '', 'g')\n")
+    user.vim_set_insert()
     edit.paste()
     key(enter)
 
 pivot river <number_small>:
     insert("cd ")
-    user.vim_normal_mode_exterm("{number_small}k")
+    user.vim_run_normal_exterm("{number_small}k")
     key('0')
     key(ctrl-w)
     key(f)
 
 pivot pillar <number_small>:
     insert("cd ")
-    user.vim_normal_mode_exterm("{number_small}k")
+    user.vim_run_normal_exterm("{number_small}k")
     key('0')
-    user.vim_command_mode(":vertical wincmd f\n")
+    user.vim_run_command(":vertical wincmd f\n")
 
 edit line <number_small>:
-    user.vim_normal_mode_exterm("{number_small}k")
+    user.vim_run_normal_exterm("{number_small}k")
     key('0')
     insert("gf")
 
 river line <number_small>:
-    user.vim_normal_mode_exterm("{number_small}k")
+    user.vim_run_normal_exterm("{number_small}k")
     key('0')
     key('ctrl-w')
     key('f')
 
 pillar line <number_small>:
-    user.vim_normal_mode_exterm("{number_small}k")
+    user.vim_run_normal_exterm("{number_small}k")
     key('0')
-    user.vim_command_mode(":vertical wincmd f\n")
+    user.vim_run_command(":vertical wincmd f\n")
 
 # Combine the pwd with the path at a relative offset and place the result in
 # the clipboard
 folder yank merge <number_small>:
-    user.vim_command_mode_exterm(":let @+ = getcwd() . '/'\n")
-    user.vim_normal_mode("{number_small}k0")
-    user.vim_command_mode(":let @+ .= substitute(strtrans(getline('.')), '\\_s\\{{2,}}', '', 'g')\n")
-    user.vim_set_insert_mode()
+    user.vim_run_command_exterm(":let @+ = getcwd() . '/'\n")
+    user.vim_run_normal("{number_small}k0")
+    user.vim_run_command(":let @+ .= substitute(strtrans(getline('.')), '\\_s\\{{2,}}', '', 'g')\n")
+    user.vim_set_insert()
 
 process kill line <number_small>:
-    user.vim_normal_mode_exterm("{number_small}k")
+    user.vim_run_normal_exterm("{number_small}k")
     key('0 w y e')
-    user.vim_set_insert_mode()
+    user.vim_set_insert()
     insert("kill -9 ")
     edit.paste()
     key(right)

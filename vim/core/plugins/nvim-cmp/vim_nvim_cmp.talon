@@ -1,5 +1,5 @@
 tag: user.vim_nvim_cmp
-and tag: user.vim_insert_mode
+and tag: user.vim_mode_insert
 -
 # This is technically a nvim-cmp specific command
 # they should probably also tie into something that uses pumvisible()

@@ -1,4 +1,4 @@
-tag: user.vim_visual_mode
+tag: user.vim_mode_visual
 -
 
 # A more limited number of actions that differ from the ones that we can use in normal
@@ -61,7 +61,7 @@ prefix with <user.unmodified_key>:
     # NOTE - xclip struggles with we use @+ directly, we indirect through @n
     # this turns @n into a scratch register. XXX - we may want to document
     # this eventually
-    user.vim_command_mode(":redir @n | silent! :'<,'>number | redir END | let @+=@n\n")
+    user.vim_run_command(":redir @n | silent! :'<,'>number | redir END | let @+=@n\n")
 
 # XXX - we could add something with motions, so we search for something
 # selected via motion
@@ -84,23 +84,23 @@ yank line:
     insert("Y")
 
 push:
-    user.vim_normal_mode_np("$a")
+    user.vim_run_normal_np("$a")
 
 # NOTE - We need a separate key() call because some unmodified keys have
 # special names, like backspace.
 push <user.unmodified_key>:
-    user.vim_normal_mode_np("$a")
+    user.vim_run_normal_np("$a")
     key('{unmodified_key}')
 
 # paste to the end of a line
 # XXX
 push it:
-    user.vim_normal_mode_np("A ")
+    user.vim_run_normal_np("A ")
     key(escape p)
 
 # Convert a number to hex
 convert to hex:
-    user.vim_command_mode(':%s/\\d\\+/\\=printf("0x%04x", submatch(0))')
+    user.vim_run_command(':%s/\\d\\+/\\=printf("0x%04x", submatch(0))')
 
 # Subtract hex
 # https://www.reddit.com/r/vim/comments/emtwgz/add_subtract_multiply_or_divide_a_value_to_each/

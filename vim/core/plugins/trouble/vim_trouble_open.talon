@@ -5,16 +5,16 @@ win.title: /FILETYPE:\[Trouble\]/
 # TODO: It might be good to remove some of the other default of in bindings here?
 # This list is also incomplete, see: https://github.com/folke/trouble.nvim#setup
 [trouble] close:
-    user.vim_normal_mode("q")
+    user.vim_run_normal("q")
 [trouble] refresh:
-    user.vim_normal_mode("r")
+    user.vim_run_normal("r")
 [trouble] next:
-    user.vim_normal_mode("j")
+    user.vim_run_normal("j")
 [trouble] previous:
-    user.vim_normal_mode("k")
+    user.vim_run_normal("k")
 [trouble] jump:
-    user.vim_normal_mode("enter")
+    user.vim_run_normal("enter")
 [trouble] jump close:
-    user.vim_normal_mode("o")
+    user.vim_run_normal("o")
 [trouble] hover:
-    user.vim_normal_mode("K")
+    user.vim_run_normal("K")

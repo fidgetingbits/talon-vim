@@ -12,37 +12,37 @@ tag: user.vim_wiki
 
 # Main wiki commands
 go wiki:
-    user.vim_command_mode_exterm(':execute "normal \\<Plug>VimwikiIndex"\n')
+    user.vim_run_command_exterm(':execute "normal \\<Plug>VimwikiIndex"\n')
 go work wiki:
-    user.vim_normal_mode(':VimwikiIndex 2"\n')
+    user.vim_run_normal(':VimwikiIndex 2"\n')
 
 go wiki tabbed:
-    user.vim_command_mode_exterm(':execute "normal \\<Plug>VimwikiTabIndex"\n')
+    user.vim_run_command_exterm(':execute "normal \\<Plug>VimwikiTabIndex"\n')
 go wiki <number_small>:
-    user.vim_command_mode_exterm(':execute "normal <C-U>call vimwiki#diary#make_note({number_small})"\n')
+    user.vim_run_command_exterm(':execute "normal <C-U>call vimwiki#diary#make_note({number_small})"\n')
 list wikis:
-    user.vim_command_mode_exterm(':execute "normal \\<Plug>VimwikiUISelect"\n')
+    user.vim_run_command_exterm(':execute "normal \\<Plug>VimwikiUISelect"\n')
 # XXX
 # wiki rename <number_small>:
-#     user.vim_command_mode_exterm(':execute "normal <C-U>call vimwiki#diary#make_note({number_small})"\n')
+#     user.vim_run_command_exterm(':execute "normal <C-U>call vimwiki#diary#make_note({number_small})"\n')
 # wiki delete <number_small>:
-#     user.vim_command_mode_exterm(':execute "normal <C-U>call vimwiki#diary#make_note({number_small})"\n')
+#     user.vim_run_command_exterm(':execute "normal <C-U>call vimwiki#diary#make_note({number_small})"\n')
 
 # Diary Commands
 go diary:
-    user.vim_command_mode_exterm(':execute "normal \\<Plug>VimwikiDiaryIndex"\n')
+    user.vim_run_command_exterm(':execute "normal \\<Plug>VimwikiDiaryIndex"\n')
 go work diary:
-    user.vim_normal_mode(":VimwikiDiaryIndex 2\n")
+    user.vim_run_normal(":VimwikiDiaryIndex 2\n")
 diary new:
-    user.vim_command_mode_exterm(':execute "normal \\<Plug>VimwikiMakeDiaryNote"\n')
+    user.vim_run_command_exterm(':execute "normal \\<Plug>VimwikiMakeDiaryNote"\n')
 diary new tab:
-    user.vim_command_mode_exterm(':execute "normal \\<Plug>VimwikiTabMakeDiaryNote"\n')
+    user.vim_run_command_exterm(':execute "normal \\<Plug>VimwikiTabMakeDiaryNote"\n')
 diary last:
-    user.vim_command_mode_exterm(':execute "normal \\<Plug>VimwikiMakeYesterdayDiaryNote"\n')
+    user.vim_run_command_exterm(':execute "normal \\<Plug>VimwikiMakeYesterdayDiaryNote"\n')
 diary next:
-    user.vim_command_mode_exterm(':execute "normal \\<Plug>VimwikiMakeTomorrowDiaryNote"\n')
+    user.vim_run_command_exterm(':execute "normal \\<Plug>VimwikiMakeTomorrowDiaryNote"\n')
 
 wiki help:
-    user.vim_command_mode_exterm(":help vimwiki\n")
+    user.vim_run_command_exterm(":help vimwiki\n")
 wiki help commands:
-    user.vim_command_mode_exterm(":help vimwiki-commands\n")
+    user.vim_run_command_exterm(":help vimwiki-commands\n")

@@ -47,7 +47,7 @@ def terminal_mode_test(func):
         if ui.active_window().app.pid != vim_test_window_pid:
             app.notify("talon-vim: Detecting window change. Aborting.")
             raise RuntimeError("Vim window has changed. Aborting test.")
-        actions.user.vim_set_terminal_mode()
+        actions.user.vim_set_terminal()
 
         if app.platform == "windows":
             # FIXME: This will depend on if it's cmd.exe?

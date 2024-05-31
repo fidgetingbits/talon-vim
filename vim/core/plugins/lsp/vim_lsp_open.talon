@@ -3,4 +3,4 @@ win.title: /FILETYPE:\[lspinfo\]/
 -
 
 close:
-    user.vim_normal_mode("q")
+    user.vim_run_normal("q")

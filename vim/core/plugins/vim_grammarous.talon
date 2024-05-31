@@ -6,28 +6,28 @@ tag: user.vim_grammarous
 # mappings instead
 -
 grammar check:
-    user.vim_command_mode(":GrammarousCheck\n")
+    user.vim_run_command(":GrammarousCheck\n")
 
 grammar help:
-    user.vim_command_mode(":GrammarousCheck --help\n")
+    user.vim_run_command(":GrammarousCheck --help\n")
 
 grammar reset:
-    user.vim_command_mode(":GrammarousReset\n")
+    user.vim_run_command(":GrammarousReset\n")
 
 grammar fix:
-    user.vim_command_mode(':execute "normal \\<Plug>(grammarous-fixit)"\n')
+    user.vim_run_command(':execute "normal \\<Plug>(grammarous-fixit)"\n')
 
 grammar fix all:
-    user.vim_command_mode(':execute "normal \\<Plug>(grammarous-fixall)"\n')
+    user.vim_run_command(':execute "normal \\<Plug>(grammarous-fixall)"\n')
 
 grammar next:
-    user.vim_command_mode(':execute "normal \\<Plug>(grammarous-move-to-next-error)"\n')
+    user.vim_run_command(':execute "normal \\<Plug>(grammarous-move-to-next-error)"\n')
 
 grammar last:
-    user.vim_command_mode(':execute "normal \\<Plug>(grammarous-move-to-previous-error)"\n')
+    user.vim_run_command(':execute "normal \\<Plug>(grammarous-move-to-previous-error)"\n')
 
 grammar disable:
-    user.vim_command_mode(':execute "normal \\<Plug>(grammarous-disable-rule)"\n')
+    user.vim_run_command(':execute "normal \\<Plug>(grammarous-disable-rule)"\n')
 
 grammar close:
-    user.vim_command_mode(':execute "normal \\<Plug>(grammarous-close-info-window)"\n')
+    user.vim_run_command(':execute "normal \\<Plug>(grammarous-close-info-window)"\n')

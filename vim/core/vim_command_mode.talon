@@ -3,7 +3,7 @@
 # # TODO: It would make a lot more sense if this also disabled the bunch of other
 # functionality that we would never want to run from inside command mode ...
 # See `:help cmdline`
-tag: user.vim_command_mode
+tag: user.vim_mode_command
 -
 # We assume that the user may want to use lua in the commandline, so we include some
 tag(): user.lua_nvim

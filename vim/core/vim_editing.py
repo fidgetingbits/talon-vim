@@ -6,7 +6,7 @@ from talon import Context, actions
 ctx = Context()
 ctx.matches = r"""
 app:vim
-and not tag: user.vim_command_mode
+and not tag: user.vim_mode_command
 """
 
 
@@ -16,18 +16,18 @@ and not tag: user.vim_command_mode
 @ctx.action_class("edit")
 class EditActions:
     def find(text: str = None):
-        actions.user.vim_normal_mode_exterm_key("/")
+        actions.user.vim_run_normal_exterm_key("/")
 
     def page_down():
         # I prefer half page scrolling. Use ctrl-f for full page
-        actions.user.vim_normal_mode_exterm_key("ctrl-d")
-        # actions.user.vim_normal_mode_exterm_key("ctrl-f")
+        actions.user.vim_run_normal_exterm_key("ctrl-d")
+        # actions.user.vim_run_normal_exterm_key("ctrl-f")
 
     def page_up():
         # I prefer half page scrolling. Use ctrl-b for full page
 
-        actions.user.vim_normal_mode_exterm_key("ctrl-u")
-        # actions.user.vim_normal_mode_exterm_key("ctrl-b")
+        actions.user.vim_run_normal_exterm_key("ctrl-u")
+        # actions.user.vim_run_normal_exterm_key("ctrl-b")
 
     def left():
         actions.key("left")

@@ -3,6 +3,6 @@ tag: user.vim_suda
 -
 
 (sudo | suda) (read | edit):
-    user.vim_command_mode(":SudaRead ")
+    user.vim_run_command(":SudaRead ")
 (sudo | suda) write:
-    user.vim_command_mode(":SudaWrite ")
+    user.vim_run_command(":SudaWrite ")

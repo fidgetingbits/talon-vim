@@ -2,11 +2,11 @@ from talon import Context, actions
 
 ctx = Context()
 ctx.matches = r"""
-tag: user.vim_insert_mode
+tag: user.vim_mode_insert
 """
 
 
 @ctx.action_class("edit")
 class EditActions:
     def delete_line():
-        actions.user.vim_normal_mode("dd")
+        actions.user.vim_run_normal("dd")

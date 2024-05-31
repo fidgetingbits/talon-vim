@@ -2,29 +2,29 @@ tag: user.vim_plug
 -
 
 plugins install:
-    user.vim_normal_mode_exterm(":so $MYVIMRC\n")
-    user.vim_normal_mode_exterm(":PlugInstall\n")
+    user.vim_run_normal_exterm(":so $MYVIMRC\n")
+    user.vim_run_normal_exterm(":PlugInstall\n")
 plugins force install:
-    user.vim_normal_mode_exterm(":so $MYVIMRC\n")
-    user.vim_normal_mode_exterm(":PlugInstall!\n")
+    user.vim_run_normal_exterm(":so $MYVIMRC\n")
+    user.vim_run_normal_exterm(":PlugInstall!\n")
 plugins status:
-    user.vim_normal_mode_exterm(":so $MYVIMRC\n")
-    user.vim_normal_mode_exterm(":PlugStatus\n")
+    user.vim_run_normal_exterm(":so $MYVIMRC\n")
+    user.vim_run_normal_exterm(":PlugStatus\n")
 plugins clean:
-    user.vim_normal_mode_exterm(":so $MYVIMRC\n")
-    user.vim_normal_mode_exterm(":PlugClean\n")
+    user.vim_run_normal_exterm(":so $MYVIMRC\n")
+    user.vim_run_normal_exterm(":PlugClean\n")
 plugins diff:
-    user.vim_normal_mode_exterm(":so $MYVIMRC\n")
-    user.vim_normal_mode_exterm(":PlugDiff\n")
+    user.vim_run_normal_exterm(":so $MYVIMRC\n")
+    user.vim_run_normal_exterm(":PlugDiff\n")
 plugins update:
-    user.vim_normal_mode_exterm(":so $MYVIMRC\n")
-    user.vim_normal_mode_exterm(":PlugUpdate\n")
+    user.vim_run_normal_exterm(":so $MYVIMRC\n")
+    user.vim_run_normal_exterm(":PlugUpdate\n")
 plugins force update:
-    user.vim_normal_mode_exterm(":so $MYVIMRC\n")
-    user.vim_normal_mode_exterm(":PlugUpdate!\n")
+    user.vim_run_normal_exterm(":so $MYVIMRC\n")
+    user.vim_run_normal_exterm(":PlugUpdate!\n")
 plugins upgrade:
-    user.vim_normal_mode_exterm(":so $MYVIMRC\n")
-    user.vim_normal_mode_exterm(":PlugUpgrade\n")
+    user.vim_run_normal_exterm(":so $MYVIMRC\n")
+    user.vim_run_normal_exterm(":PlugUpgrade\n")
 plugins snapshot:
-    user.vim_normal_mode_exterm(":so $MYVIMRC\n")
-    user.vim_normal_mode_exterm(":PlugSnapshot\n")
+    user.vim_run_normal_exterm(":so $MYVIMRC\n")
+    user.vim_run_normal_exterm(":PlugSnapshot\n")

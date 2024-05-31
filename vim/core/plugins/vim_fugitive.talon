@@ -6,90 +6,90 @@ tag: user.vim_fugitive
 
 # File management
 (fugitive | git) add file:
-    user.vim_command_mode(':exe ":G add %"\n')
+    user.vim_run_command(':exe ":G add %"\n')
 (fugitive | git) add everything:
-    user.vim_command_mode(':exe ":G add -u"\n')
+    user.vim_run_command(':exe ":G add -u"\n')
 (fugitive | git) blame:
-    user.vim_command_mode(':exe ":Git blame"\n')
+    user.vim_run_command(':exe ":Git blame"\n')
 (fugitive | git) browse:
-    user.vim_command_mode(':exe ":G Browse"\n')
+    user.vim_run_command(':exe ":G Browse"\n')
 (fugitive | git) commit [message]:
-    user.vim_command_mode(':exe ":G commit"\n')
-    user.vim_set_insert_mode()
+    user.vim_run_command(':exe ":G commit"\n')
+    user.vim_set_insert()
 (fugitive | git) (delete | remove):
-    user.vim_command_mode(":GDelete")
+    user.vim_run_command(":GDelete")
 
 # Diffing
 (fugitive | git) diff staged:
-    user.vim_command_mode(':exe ":G! diff --staged"\n')
+    user.vim_run_command(':exe ":G! diff --staged"\n')
 (fugitive | git) diff:
-    user.vim_command_mode(':exe ":Gdiffsplit"\n')
+    user.vim_run_command(':exe ":Gdiffsplit"\n')
 (fugitive | git) [(vertical | pillar)] split diff:
-    user.vim_command_mode(':exe ":Gvdiffsplit!"\n')
+    user.vim_run_command(':exe ":Gvdiffsplit!"\n')
 (fugitive | git) [(vertical | pillar)] diff split:
-    user.vim_command_mode(':exe ":Gvdiffsplit!"\n')
+    user.vim_run_command(':exe ":Gvdiffsplit!"\n')
 (fugitive | git) (horizontal | river) diff:
-    user.vim_command_mode(':exe ":Gdiffsplit!"\n')
+    user.vim_run_command(':exe ":Gdiffsplit!"\n')
 (fugitive | git) diff last:
-    user.vim_command_mode(':exe ":Gdiff !~1"\n')
+    user.vim_run_command(':exe ":Gdiff !~1"\n')
 
 # Unsorted
 (fugitive | git) fetch:
-    user.vim_command_mode(":Git fetch\n")
+    user.vim_run_command(":Git fetch\n")
 (fugitive | git) fetch and rebase:
-    user.vim_command_mode(":Git fetch\n")
-    user.vim_command_mode(":Git rebase\n")
+    user.vim_run_command(":Git fetch\n")
+    user.vim_run_command(":Git rebase\n")
 (fugitive | git) force write:
-    user.vim_command_mode(":Gwrite!")
+    user.vim_run_command(":Gwrite!")
 (fugitive | git) grep:
-    user.vim_command_mode(":Git grep ")
+    user.vim_run_command(":Git grep ")
 (fugitive | git) log tabbed:
-    user.vim_command_mode(":tabnew\n")
-    user.vim_command_mode(':exe ":Gclog"\n')
-    user.vim_command_mode(':TabooRename GITLOG"\n')
+    user.vim_run_command(":tabnew\n")
+    user.vim_run_command(':exe ":Gclog"\n')
+    user.vim_run_command(':TabooRename GITLOG"\n')
 (fugitive | git) log:
-    user.vim_command_mode(':exe ":Gclog!"\n')
+    user.vim_run_command(':exe ":Gclog!"\n')
 # this will automatically open the first commit into the active buffer
 (fugitive | git) log here:
-    user.vim_command_mode(':exe ":Gclog"\n')
+    user.vim_run_command(':exe ":Gclog"\n')
 (fugitive | git) merge:
-    user.vim_command_mode(":G fallmerge")
+    user.vim_run_command(":G fallmerge")
 (fugitive | git) merge tool:
-    user.vim_command_mode(":G mergetool")
+    user.vim_run_command(":G mergetool")
 (fugitive | git) move:
-    user.vim_command_mode(":GMove ")
+    user.vim_run_command(":GMove ")
 (fugitive | git) pull:
-    user.vim_command_mode(":Git pull ")
+    user.vim_run_command(":Git pull ")
 (fugitive | git) push:
-    user.vim_command_mode(":Git push ")
+    user.vim_run_command(":Git push ")
 (fugitive | git) push now:
-    user.vim_command_mode(":Git push\n")
+    user.vim_run_command(":Git push\n")
 (fugitive | git) remove:
-    user.vim_command_mode(":GRemove ")
+    user.vim_run_command(":GRemove ")
 (fugitive | git) rename:
-    user.vim_command_mode(":GRename ")
+    user.vim_run_command(":GRename ")
 (fugitive | git) reset (current | reset) file:
-    user.vim_command_mode(':exe ":G reset HEAD %"\n')
+    user.vim_run_command(':exe ":G reset HEAD %"\n')
 (fugitive | git) status:
-    user.vim_command_mode(':exe ":G"\n')
+    user.vim_run_command(':exe ":G"\n')
 (fugitive | git) write:
-    user.vim_command_mode(":G write")
+    user.vim_run_command(":G write")
 (fugitive | git) read:
-    user.vim_command_mode(":Gread")
+    user.vim_run_command(":Gread")
 
 # XXX - they should be somewhere specific to knowing were inside of the
 # diff window
 # merge conflict resolution
 keep (target | left):
-    user.vim_command_mode(':exe ":diffget //2"\n')
+    user.vim_run_command(':exe ":diffget //2"\n')
 keep (merge | right):
-    user.vim_command_mode(':exe ":diffget //3"\n')
+    user.vim_run_command(':exe ":diffget //3"\n')
 diff update:
-    user.vim_command_mode(':exe ":diffupdate"\n')
+    user.vim_run_command(':exe ":diffupdate"\n')
 hunk next:
-    user.vim_normal_mode_keys("] c")
+    user.vim_run_normal_keys("] c")
 hunk (back | last):
-    user.vim_normal_mode_keys("[ c")
+    user.vim_run_normal_keys("[ c")
 
 # Merging
 
@@ -97,8 +97,8 @@ hunk (back | last):
 # mergetool` and you have one split open up top with the file you're editing, in
 # and only the quick list on the bottom.
 conflict start:
-    user.vim_command_mode(':exe ":G mergetool"\n')
-    user.vim_command_mode(':exe ":Gvdiffsplit!"\n')
+    user.vim_run_command(':exe ":G mergetool"\n')
+    user.vim_run_command(':exe ":Gvdiffsplit!"\n')
     # XXX - maybe add a search for the next merge conflict?
 
 # assumes you're already in a gvdiffsplit layout
@@ -106,11 +106,11 @@ conflict start:
 # out why... there must be a bug in my API or something
 conflict next:
     # close all tabs
-    user.vim_command_mode(':exe ":only"\n')
+    user.vim_run_command(':exe ":only"\n')
     # re-open quick list
-    user.vim_command_mode(':exe ":cw"\n')
+    user.vim_run_command(':exe ":cw"\n')
     # go to next quick list entry
-    user.vim_command_mode(':exe ":cn"\n')
+    user.vim_run_command(':exe ":cn"\n')
     # open the next diff
-    user.vim_command_mode(':exe ":Gvdiffsplit!"\n')
+    user.vim_run_command(':exe ":Gvdiffsplit!"\n')
     # XXX - maybe add a search for the next merge conflict?
