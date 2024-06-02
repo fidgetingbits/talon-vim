@@ -420,7 +420,6 @@ text_object_select = {
     "graph": "p",
     "tag block": "t",
     "funk": "f",  # This is for around or iner
-    "block": "b",
     "condition": "m",
     "loop": "l",
     "class": "c",
