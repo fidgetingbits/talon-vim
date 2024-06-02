@@ -754,12 +754,12 @@ new term here:
     path = user.zsh_get_cwd()
     user.vim_run_normal_exterm(":term cd {path} && zsh\n")
 
-(split term here|river term here):
+(split term here | river term here):
     # FIXME: user.zsh_get_cwd() should be generic and overridden for zsh
     path = user.zsh_get_cwd()
     user.vim_run_normal_exterm(":split | term cd {path} && zsh\n")
 
-(vertical split term here|pillar term here):
+(vertical split term here | pillar term here):
     # FIXME: user.zsh_get_cwd() should be generic and overridden for zshs
     path = user.zsh_get_cwd()
     user.vim_run_normal_exterm(":vsplit | term cd {path} && zsh\n")
@@ -844,3 +844,17 @@ louis call func:
     user.vim_run_command_exterm(":lua ")
 louis reload (plug in | module):
     user.vim_run_command_exterm(":lua require('plenary').reload_module('')")
+
+check health:
+    user.vim_run_command_exterm(":checkhealth\n")
+
+update remote plugins:
+    user.vim_run_command_exterm(":UpdateRemotePlugins\n")
+
+# See https://github.com/neovim/node-client?tab=readme-ov-file#debug--troubleshoot
+enable node debug:
+    user.vim_run_command_exterm(":lua vim.env.NVIM_NODE_HOST_DEBUG=1\n")
+
+call vim funk:
+    user.vim_run_command_exterm(":lua vim.fn.")
+    user.insert_between("", "()")
