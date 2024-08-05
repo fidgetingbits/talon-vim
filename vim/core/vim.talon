@@ -35,7 +35,7 @@ app: vim
 and not tag: user.vim_mode_command
 -
 
-tag(): user.vim
+##tag(): user.vim
 tag(): user.tabs
 # TODO - add line_commands, etc
 
@@ -57,8 +57,8 @@ tag(): user.tabs
 #tag(): user.vim_plug
 #tag(): user.vim_lightspeed
 # tag(): user.vim_signature
-tag(): user.vim_taboo
-tag(): user.vim_tabular
+#tag(): user.vim_taboo
+#tag(): user.vim_tabular
 #tag(): user.vim_taskwiki
 # tag(): user.vim_test
 # tag(): user.vim_unicode
@@ -68,7 +68,7 @@ tag(): user.vim_tabular
 # tag(): user.vim_zenmode
 # tag(): user.vim_codeql
 # tag(): user.vim_mason
-tag(): user.vim_lazy
+#tag(): user.vim_lazy
 
 # To the settings below dictate how certain parts of Talon VIM will work. You
 # can leave them or tweak them to your needs.

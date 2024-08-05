@@ -1,16 +1,14 @@
 import logging
 import pprint
-import time
 import sys
+import time
 from pathlib import Path
-from talon import Context, Module, actions, app, settings, ui
 
+from talon import Context, Module, actions, app, settings, ui
 
 sys.path.insert(1, f"{Path.home()}/.talon/user/neovim-talon")
 
-from core.rpc.modes import VimMode
 from core.rpc.api import VimAPI
-
 
 try:
     import pynvim
@@ -643,7 +641,7 @@ def vim_motions_all(m) -> str:
 )
 def vim_motions_all_adjust(m) -> str:
     "Returns a rule matching a vim motion, and adjusts the vim mode"
-    v = VimMode()
+    v = VimAPI()
     v.set_any_motion_mode()
     # print(m)
     return "".join(list(m))
@@ -715,7 +713,7 @@ def vim_unranged_surround_text_objects(m) -> str:
 @mod.capture(rule="{self.vim_motion_commands}")
 def vim_motion_commands(m) -> str:
     "Returns a string representing a motion command"
-    v = VimMode()
+    v = VimAPI()
     if v.is_visual_mode():
         if str(m) in visual_commands:
             return visual_commands[str(m)]
@@ -763,7 +761,7 @@ def vim_normal_counted_motion_keys(m) -> str:
 def vim_normal_counted_action(m) -> str:
     "Returns a string of a counted motion"
     # XXX - may need to do action-specific mode checking
-    v = VimMode()
+    v = VimAPI()
     v.cancel_queued_commands()
     if m.vim_counted_actions == "u":
         # undo doesn't work with ctrl-o it seems
@@ -777,7 +775,7 @@ def vim_normal_counted_action(m) -> str:
 @mod.capture(rule="[<number_small>] <self.vim_counted_actions_keys>")
 def vim_normal_counted_actions_keys(m) -> str:
     "Returns a string of a counted action representing keys"
-    v = VimMode()
+    v = VimAPI()
     v.cancel_queued_commands()
     v.set_any_motion_mode()
 
@@ -803,7 +801,7 @@ def vim_select_motion(m) -> str:
 # class main_actions:
 #    def insert(text):
 #        """override insert action to allow us to enter insert mode"""
-#        v = VimMode()
+#        v = VimAPI()
 #        v.set_insert_mode()
 #        scripting.core.MainActions.insert(text)
 
