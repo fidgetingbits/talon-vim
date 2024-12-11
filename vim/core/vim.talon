@@ -195,19 +195,6 @@ scroll [on] line <number>:
     user.vim_run_command_exterm(":{number}\nzt")
 center [on] line <number>:
     user.vim_run_command_exterm(":{number}\nz.")
-scroll top:
-    user.vim_run_normal_exterm("zt")
-scroll middle:
-    user.vim_run_normal_exterm("zz")
-scroll bottom:
-    user.vim_run_normal_exterm("zb")
-# XXX - change these exist scroll top curse ?
-scroll top reset cursor:
-    user.vim_run_normal_exterm("z\n")
-scroll middle reset cursor:
-    user.vim_run_normal_exterm("z.")
-scroll bottom reset cursor:
-    user.vim_run_normal_exterm("z ")
 
 ###
 # Buffers
@@ -378,15 +365,11 @@ split <number_small>:
 
 # split right
 sprite:
-    user.vim_set_normal_exterm()
-    key(ctrl-w)
-    key(l)
+    user.split_focus_right()
 
 # split left
 spliff:
-    user.vim_set_normal_exterm()
-    key(ctrl-w)
-    key(h)
+    user.split_focus_left()
 
 # moving windows
 split (only | exclusive):

@@ -806,3 +806,18 @@ file swap many see:
     user.vim_run_command('!find . -name "*.[ch]" | xargs sed -i -e s///g')
 file swap many pie:
     user.vim_run_command('!find . -name "*.py" | xargs sed -i -e s///g')
+
+# These overlap with edit.py, and if we're in something like a pager in the terminal we don't want these to run
+scroll top:
+    user.vim_run_normal_exterm("zt")
+scroll middle:
+    user.vim_run_normal_exterm("zz")
+scroll bottom:
+    user.vim_run_normal_exterm("zb")
+# XXX - change these exist scroll top curse ?
+scroll top reset cursor:
+    user.vim_run_normal_exterm("z\n")
+scroll middle reset cursor:
+    user.vim_run_normal_exterm("z.")
+scroll bottom reset cursor:
+    user.vim_run_normal_exterm("z ")
